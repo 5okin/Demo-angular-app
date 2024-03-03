@@ -1,6 +1,6 @@
 # Angular app.
 
-A angular app builed with bootstrap and parse server using MongoDB as a backend.
+A angular app build with bootstrap and parse server using MongoDB as a backend.
 [Video (gif) demo](https://i.imgur.com/K61qZLz.gif)
 
 <p align="center">

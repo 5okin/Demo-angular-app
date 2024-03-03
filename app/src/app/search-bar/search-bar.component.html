@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light">
+  <div class="container d-flex justify-content-center">
+    <div class="row">
+      <div class="col">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" name="query" type="text" (keyup.enter)="onSubmit(newItem.value)" aria-label="Search" #newItem>
+        </form>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="onSubmit(newItem.value)">Search</button>
+      </div>
+    </div>
+  </div>
+</nav>

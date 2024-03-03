@@ -1,0 +1,27 @@
+#landmarkImg {
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+#landmarkImg:hover {opacity: 0.8;}
+
+.card:hover {
+    transform: translateY(-5px); /* Adjust the value for the desired vertical movement */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow for a lift effect */
+    cursor: pointer;
+    
+}
+
+.card {
+    transition: transform 0.2s ease-in-out; /* Smooth transition for card movement */
+}
+
+
+.NumberOfDeals{
+    padding-bottom: 10px;
+}
+
+
+.card-title{
+
+}

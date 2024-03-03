@@ -1,0 +1,14 @@
+<div class="modal " [class.show]="showModal" >
+  <span class="close " (click)="onCloseModal()">&times;</span>    
+  <div id="caption" class="caption">
+        <a [href]="landmark?.url" target="_blank"><h2>{{ landmark?.title }}</h2></a>
+        <p>Location: {{ landmark?.location }}</p>
+        <img class="modal-content" [src]="landmark?.photo" alt="Landmark Image">
+        <div class="modal-dialog">
+          <strong>Short Info:</strong>
+          <p>{{ landmark?.short_info }}</p>
+          <strong>Description:</strong>
+          <p>{{ landmark?.description }}</p>
+      </div>
+  </div>
+</div>

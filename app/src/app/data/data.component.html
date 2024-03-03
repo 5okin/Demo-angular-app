@@ -1,0 +1,50 @@
+<app-search-bar 
+  (searchEvent)="onSearch($event)"
+></app-search-bar>
+
+
+<div class="container mt-4">
+  <div class="NumberOfDeals float-right"><b>{{ landmarks.length }}</b> available</div>
+  <div *ngIf="error" class="alert alert-danger">
+    No data found
+  </div>
+  <div *ngFor="let landmark of landmarks; index as i">
+    <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" (click)="openLandmarkModal(i)">
+      <div class="row g-0 align-items-center justify-content-center h-10">
+
+        <div id="landmarkImg" class="col-md-4 d-flex align-items-center" style="height: 250px; width: 250px;">
+          <img 
+            src="{{ landmark.photo_thumb }}" 
+            class="img-fluid rounded" 
+            alt="{{ landmark.title }}" 
+            style="height: 250px; width: 250px; object-fit: cover;"
+            (click)="openModal(landmark.photo, landmark.title); $event.stopPropagation();"
+            >
+        </div>
+
+        <div class="col-9" style="padding-left: 5px;">
+          <div class="card-body d-flex flex-column " style="padding: 10px;">
+            <h4 class="card-title" style="margin-bottom: 0;"><a href="{{ landmark.url }}" target="_blank" (click)=$event.stopPropagation();>{{ landmark.title }}</a></h4>
+            <p class="card-text"><small class="text-muted">{{ landmark.location }}</small></p>
+            <p class="card-text" style="margin-top: 5px;">{{ landmark.short_info }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-image-modal 
+  [showModal]="modalOpen" 
+  [imageUrl]="selectedImageUrl" 
+  [caption]="selectedImageUrlCaption"
+  (closeModal)="closeModal()">
+</app-image-modal>
+
+<app-landmark-modal
+  [showModal]="lmodalOpen"
+  [landmark]="curr_landmark"
+  (closeModal)="closeModal()">
+</app-landmark-modal>
+
+
